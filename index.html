@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101813">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icon.svg">
+  <title>贪吃蛇 · Snake</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="贪吃蛇首页"><span class="brand-mark">S</span><span>小游戏<span class="brand-dot">.</span></span></a>
+      <span class="top-note"><span class="live-dot"></span> 离线可玩</span>
+    </header>
+
+    <section class="game-layout" aria-label="贪吃蛇游戏">
+      <div class="intro">
+        <p class="eyebrow">经典街机 · ARCADE CLASSIC</p>
+        <h1>贪吃蛇<span>。</span></h1>
+        <p class="subtitle">吃掉果实，变得更长。小心别撞到自己。</p>
+        <div class="score-row">
+          <div class="score-card"><span class="score-label">本局得分</span><strong id="score">0</strong></div>
+          <div class="score-card best-card"><span class="score-label">最高纪录</span><strong id="best">0</strong></div>
+        </div>
+
+        <div class="controls-hint">
+          <span class="hint-icon">⌨</span>
+          <div><strong>操作方式</strong><p>方向键 / WASD 移动<br><kbd>空格</kbd> 暂停 <span class="hint-separator">·</span> <kbd>R</kbd> 重新开始</p></div>
+        </div>
+        <button class="primary-button" id="start-button" type="button"><span>▶</span> 开始游戏</button>
+      </div>
+
+      <div class="board-wrap">
+        <div class="board-topline"><span><i class="status-dot" id="status-dot"></i><span id="status">准备就绪</span></span><span class="level-label">速度 <b id="speed">1</b></span></div>
+        <div class="canvas-frame">
+          <canvas id="game" width="600" height="600" aria-label="贪吃蛇游戏画面" role="img"></canvas>
+          <div class="overlay" id="overlay">
+            <div class="overlay-card"><div class="overlay-icon" id="overlay-icon">✦</div><h2 id="overlay-title">准备好了吗？</h2><p id="overlay-copy">按方向键或点击下方按钮开始</p><button class="overlay-button" id="overlay-button" type="button">开始游戏 <span>→</span></button></div>
+          </div>
+        </div>
+        <div class="mobile-controls" aria-label="触控方向控制"><button data-dir="up" aria-label="向上">↑</button><div><button data-dir="left" aria-label="向左">←</button><button data-dir="down" aria-label="向下">↓</button><button data-dir="right" aria-label="向右">→</button></div></div>
+        <div class="board-footer"><span><span class="fruit-key">●</span> 果实 <span class="snake-key">●</span> 蛇</span><span>每吃一个果实 +10 分</span></div>
+      </div>
+    </section>
+    <footer class="page-footer">放松一下，玩得开心 <span>✳</span></footer>
+  </main>
+  <script src="game.js"></script>
+  <script>if ('serviceWorker' in navigator && location.protocol !== 'file:') navigator.serviceWorker.register('./service-worker.js');</script>
+</body>
+</html>
