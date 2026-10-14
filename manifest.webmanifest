@@ -1,0 +1,14 @@
+{
+  "id": ".",
+  "name": "贪吃蛇 · 经典小游戏",
+  "short_name": "贪吃蛇",
+  "description": "一款支持离线游玩的经典贪吃蛇小游戏。",
+  "lang": "zh-CN",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#101813",
+  "theme_color": "#101813",
+  "icons": [{ "src": "icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }]
+}
